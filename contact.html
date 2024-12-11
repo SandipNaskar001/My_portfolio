@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(#000a0d95, #022e4d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .contact-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(28, 26, 26, 0.083);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 1200px;
+        }
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+            width: 50%;
+        }
+        .contact-title {
+            font-weight: 600;
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+        .contact-title hr {
+            border: none;
+            width: 160px;
+            height: 5px;
+            background-color: rgb(252, 252, 252);
+        }
+        .contact-inputs {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: linear-gradient(to bottom right, #476eef, #032e3a);
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button img {
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .contact-right img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        @media(max-width:760px){
+            body {
+        padding: 10px; /* Add some padding to the body */
+    }
+    .contact-container {
+        flex-direction: column; /* Stack elements vertically */
+        width: 100%; /* Full width for mobile */
+        margin: 0; /* Remove any margin */
+    }
+    .contact-left {
+        width: 100%; /* Full width for the left section */
+        align-items: center; /* Center align items */
+    }
+    .contact-title {
+        font-size: 30px; /* Further reduce font size for mobile */
+    }
+    .contact-inputs {
+        width: 100%; /* Ensure inputs take full width */
+    }
+    button {
+        width: 60%; 
+        padding: 15px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Adjust font size */
+    }
+    .contact-right {
+        display: none; /* Hide the right section on mobile */
+    }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" class="contact-left" method="POST"> 
+            <div class="contact-title">
+                <h2>Contact Me</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="008b241a-13e6-4193-9bfe-7b23fc3bc5b7">
+            
+            <input type="text" name="name" placeholder="Enter Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Enter Your Mail Id" class="contact-inputs" required>
+            <textarea name="message" placeholder="Enter Your Message" class="contact-inputs" required></textarea>
+            <button type="submit">Submit <img src="arrow_icon.png" alt=""></button>
+        </form>
+        <div class="contact-right">
+            <img src="right_img.png" alt="Contact Image">
+        </div>
+    </div>
+</body>
+</html>
